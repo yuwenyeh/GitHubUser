@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D84EB6DC29D335CC000C346B /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EB6DB29D335CC000C346B /* Observable.swift */; };
-		D84EB6DF29D479D7000C346B /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EB6DE29D479D7000C346B /* extension.swift */; };
+		D84EB6DF29D479D7000C346B /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EB6DE29D479D7000C346B /* UITableViewCell+.swift */; };
+		D84EB6E329D47BA0000C346B /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EB6E229D47BA0000C346B /* UITableView+.swift */; };
+		D84EB6E729D48473000C346B /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EB6E629D48473000C346B /* UserDetailViewModel.swift */; };
 		D854540929D1EB0500FF2FBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854540829D1EB0500FF2FBD /* AppDelegate.swift */; };
 		D854540B29D1EB0500FF2FBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854540A29D1EB0500FF2FBD /* SceneDelegate.swift */; };
 		D854541229D1EB0700FF2FBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D854541129D1EB0700FF2FBD /* Assets.xcassets */; };
@@ -42,7 +44,9 @@
 
 /* Begin PBXFileReference section */
 		D84EB6DB29D335CC000C346B /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		D84EB6DE29D479D7000C346B /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		D84EB6DE29D479D7000C346B /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
+		D84EB6E229D47BA0000C346B /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		D84EB6E629D48473000C346B /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		D854540529D1EB0500FF2FBD /* GitHubUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D854540829D1EB0500FF2FBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D854540A29D1EB0500FF2FBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,21 +97,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D84EB6DD29D477D0000C346B /* extension */ = {
+		D84EB6DD29D477D0000C346B /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				D84EB6DE29D479D7000C346B /* extension.swift */,
+				D84EB6DE29D479D7000C346B /* UITableViewCell+.swift */,
+				D84EB6E229D47BA0000C346B /* UITableView+.swift */,
 			);
-			path = extension;
+			path = Util;
 			sourceTree = "<group>";
 		};
-		D84EB6E029D47A65000C346B /* ssetup */ = {
+		D84EB6E029D47A65000C346B /* Set */ = {
 			isa = PBXGroup;
 			children = (
 				D854540A29D1EB0500FF2FBD /* SceneDelegate.swift */,
 				D854540829D1EB0500FF2FBD /* AppDelegate.swift */,
 			);
-			path = ssetup;
+			path = Set;
 			sourceTree = "<group>";
 		};
 		D84EB6E129D47A7E000C346B /* other */ = {
@@ -115,9 +120,17 @@
 			children = (
 				D854541329D1EB0700FF2FBD /* LaunchScreen.storyboard */,
 				D854541129D1EB0700FF2FBD /* Assets.xcassets */,
-				D854541629D1EB0700FF2FBD /* Info.plist */,
 			);
 			path = other;
+			sourceTree = "<group>";
+		};
+		D84EB6E429D47C02000C346B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D8EFE67229D3229700072086 /* UserTableViewCell.xib */,
+				D8EFE67129D3229700072086 /* UserTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D85453FC29D1EB0500FF2FBD = {
@@ -145,13 +158,14 @@
 			isa = PBXGroup;
 			children = (
 				D84EB6E129D47A7E000C346B /* other */,
-				D84EB6E029D47A65000C346B /* ssetup */,
-				D84EB6DD29D477D0000C346B /* extension */,
+				D84EB6E029D47A65000C346B /* Set */,
+				D84EB6DD29D477D0000C346B /* Util */,
+				D84EB6E429D47C02000C346B /* Cell */,
 				D854543829D1EBBD00FF2FBD /* UserListViewController.swift */,
 				D854543929D1EBBD00FF2FBD /* UserListViewController.xib */,
-				D8EFE67129D3229700072086 /* UserTableViewCell.swift */,
-				D8EFE67229D3229700072086 /* UserTableViewCell.xib */,
 				D8EFE67529D3241300072086 /* UserListViewModel.swift */,
+				D84EB6E629D48473000C346B /* UserDetailViewModel.swift */,
+				D854541629D1EB0700FF2FBD /* Info.plist */,
 				D84EB6DB29D335CC000C346B /* Observable.swift */,
 			);
 			path = GitHubUser;
@@ -375,8 +389,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84EB6E729D48473000C346B /* UserDetailViewModel.swift in Sources */,
 				D8EFE67329D3229700072086 /* UserTableViewCell.swift in Sources */,
-				D84EB6DF29D479D7000C346B /* extension.swift in Sources */,
+				D84EB6E329D47BA0000C346B /* UITableView+.swift in Sources */,
+				D84EB6DF29D479D7000C346B /* UITableViewCell+.swift in Sources */,
 				D854543A29D1EBBD00FF2FBD /* UserListViewController.swift in Sources */,
 				D854540929D1EB0500FF2FBD /* AppDelegate.swift in Sources */,
 				D854540B29D1EB0500FF2FBD /* SceneDelegate.swift in Sources */,

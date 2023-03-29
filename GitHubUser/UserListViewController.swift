@@ -21,9 +21,7 @@ class UserListViewController: UIViewController {
         super.viewDidLoad()
         mTableView.delegate = self
         mTableView.dataSource = self
-        mTableView.register(UINib(nibName: "UserTableViewCell",
-                                  bundle: nil),
-                            forCellReuseIdentifier: "UserTableViewCell")
+        mTableView.registerCell(UserTableViewCell.self)
         viewModel.getUserList()
         bind(viewModel)
     }
@@ -42,14 +40,10 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.userList.value.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell",
-            for: indexPath) as? UserTableViewCell else {
+        guard let cell: UserTableViewCell = tableView.dequeueCell(indexPath: indexPath) else {
             return UITableViewCell()
         }
         cell.textLabel?.text = viewModel.userList.value[indexPath.row].name
         return cell
     }
 }
-
-
-
