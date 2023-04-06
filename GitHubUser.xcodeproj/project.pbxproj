@@ -20,6 +20,7 @@
 		D854542C29D1EB0700FF2FBD /* GitHubUserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854542B29D1EB0700FF2FBD /* GitHubUserUITestsLaunchTests.swift */; };
 		D854543A29D1EBBD00FF2FBD /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854543829D1EBBD00FF2FBD /* UserListViewController.swift */; };
 		D854543B29D1EBBD00FF2FBD /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D854543929D1EBBD00FF2FBD /* UserListViewController.xib */; };
+		D8D8D50229DEFCE0006784BD /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8D50129DEFCE0006784BD /* UserDataModel.swift */; };
 		D8EFE67329D3229700072086 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EFE67129D3229700072086 /* UserTableViewCell.swift */; };
 		D8EFE67429D3229700072086 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8EFE67229D3229700072086 /* UserTableViewCell.xib */; };
 		D8EFE67629D3241300072086 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EFE67529D3241300072086 /* UserListViewModel.swift */; };
@@ -60,6 +61,7 @@
 		D854542B29D1EB0700FF2FBD /* GitHubUserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUserUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D854543829D1EBBD00FF2FBD /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		D854543929D1EBBD00FF2FBD /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListViewController.xib; sourceTree = "<group>"; };
+		D8D8D50129DEFCE0006784BD /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		D8EFE67129D3229700072086 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		D8EFE67229D3229700072086 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		D8EFE67529D3241300072086 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
@@ -90,13 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		93803D45B63E173708DE65EA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D84EB6DD29D477D0000C346B /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +135,6 @@
 				D854541E29D1EB0700FF2FBD /* GitHubUserTests */,
 				D854542829D1EB0700FF2FBD /* GitHubUserUITests */,
 				D854540629D1EB0500FF2FBD /* Products */,
-				93803D45B63E173708DE65EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +159,7 @@
 				D854543929D1EBBD00FF2FBD /* UserListViewController.xib */,
 				D8EFE67529D3241300072086 /* UserListViewModel.swift */,
 				D84EB6E629D48473000C346B /* UserDetailViewModel.swift */,
+				D8D8D50129DEFCE0006784BD /* UserDataModel.swift */,
 				D854541629D1EB0700FF2FBD /* Info.plist */,
 				D84EB6DB29D335CC000C346B /* Observable.swift */,
 			);
@@ -213,7 +208,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D854543229D1EB0700FF2FBD /* Build configuration list for PBXNativeTarget "GitHubUserTests" */;
 			buildPhases = (
-				FE12491BE99E1B818EEF98FF /* [CP] Check Pods Manifest.lock */,
 				D854541729D1EB0700FF2FBD /* Sources */,
 				D854541829D1EB0700FF2FBD /* Frameworks */,
 				D854541929D1EB0700FF2FBD /* Resources */,
@@ -232,7 +226,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D854543529D1EB0700FF2FBD /* Build configuration list for PBXNativeTarget "GitHubUserUITests" */;
 			buildPhases = (
-				03C453009F215B379840D3B4 /* [CP] Check Pods Manifest.lock */,
 				D854542129D1EB0700FF2FBD /* Sources */,
 				D854542229D1EB0700FF2FBD /* Frameworks */,
 				D854542329D1EB0700FF2FBD /* Resources */,
@@ -319,28 +312,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03C453009F215B379840D3B4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GitHubUser-GitHubUserUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D8EFE67729D327A600072086 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -360,28 +331,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		FE12491BE99E1B818EEF98FF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GitHubUserTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -391,6 +340,7 @@
 			files = (
 				D84EB6E729D48473000C346B /* UserDetailViewModel.swift in Sources */,
 				D8EFE67329D3229700072086 /* UserTableViewCell.swift in Sources */,
+				D8D8D50229DEFCE0006784BD /* UserDataModel.swift in Sources */,
 				D84EB6E329D47BA0000C346B /* UITableView+.swift in Sources */,
 				D84EB6DF29D479D7000C346B /* UITableViewCell+.swift in Sources */,
 				D854543A29D1EBBD00FF2FBD /* UserListViewController.swift in Sources */,

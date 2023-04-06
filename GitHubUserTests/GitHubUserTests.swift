@@ -8,28 +8,56 @@
 import XCTest
 @testable import GitHubUser
 
-final class GitHubUserTests: XCTestCase {
+final class UserListViewModelTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_getUserList_successGetOneUserData() {
+        // given準備好的測試材料
+        let value = [UserDataModel(name: "MockName", image: "MockImage", admin: true)]
+        let expectation = XCTestExpectation(description: "should get data successfully")
+        let repo = MockUserListRepository(value: value, error: nil, successExpectation: expectation)
+        let sut = UserListViewModel(repository: repo)
+        // when 測試使用的情境
+        sut.getUserList()
+        // 主
+        // then得到結果
+        XCTAssertEqual(sut.userList.value.count, 1)
+        XCTAssertEqual(sut.userList.value.first?.name, "MockName")
+        XCTAssertEqual(sut.userList.value.first?.image, "MockImage")
+        XCTAssertEqual(sut.userList.value.first?.admin, true)
+        wait(for: [expectation], timeout: 0.5)
     }
+}
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+struct MockUserListRepository: UserListRepositoryType {
+    let value: [UserDataModel]?
+    let error: Error?
+    let failExpectation: XCTestExpectation?
+    let successExpectation: XCTestExpectation?
+    init(value: [UserDataModel]?,
+         error: Error?,
+         failExpectation: XCTestExpectation? = nil,
+         successExpectation: XCTestExpectation? = nil) {
+        self.value = value
+        self.error = error
+        self.failExpectation = failExpectation
+        self.successExpectation = successExpectation
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func getUserList(urlString: String, completion: @escaping (Result<[UserDataModel], Error>) -> Void) {
+        if let error {
+            completion(.failure(error))
+            // 滿足這個預期
+            failExpectation?.fulfill()
+            return
         }
+        if let value {
+            completion(.success(value))
+            successExpectation?.fulfill()
+            return
+        }
+        completion(.failure(MockError.noResponse))
     }
-
+}
+enum MockError: Error {
+    case noResponse
+    case badNetwork
 }

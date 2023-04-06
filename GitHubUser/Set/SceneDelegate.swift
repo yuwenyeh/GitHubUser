@@ -14,7 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowSecne = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowSecne)
-        let viewModel = UserListViewModel()
+        let repository = UserListRepository()
+        let viewModel = UserListViewModel(repository: repository)
         let viewController = UserListViewController(viewModel)
         let navigation = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigation
