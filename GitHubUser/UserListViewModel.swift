@@ -16,16 +16,19 @@ final class UserListViewModel: UserListViewModelType {
     var error: Observable<String?> = Observable(.none)
     var userList: Observable<[UserDataModel]> = Observable([])
     let repository: UserListRepositoryType
+    var finishWorking = 0
+    var totalWorkers = 100
     init(repository: UserListRepositoryType) {
         self.repository = repository
     }
     func getUserList() {
-        let urlStr = GitHubRepository.getUserDataModel(num: 20)
-       // let urlStr = "https://api.github.com/users?since=0&per_page=20"
+        finishWorking += 20
+        let urlStr = GitHubRepository.getUserDataModel(num: finishWorking)
+       // let urlStr = "https://api.github.com/users?since=0&per_page=100"
         repository.getUserList(urlString: urlStr) { result in
             switch result {
             case .success(let value):
-                self.userList.value = value
+                self.userList.value.append(contentsOf: value)
             case .failure(let error):
                 self.error.value = error.localizedDescription
             }
@@ -48,7 +51,7 @@ struct UserListRepository: UserListRepositoryType {
                 return
             }
             guard let response = response as? HTTPURLResponse,
-            response.statusCode == 200 else { return }
+            (200...299).contains(response.statusCode) else { return }
             guard let data else { return }
             do {
                 let decoder = JSONDecoder()
@@ -63,5 +66,3 @@ struct UserListRepository: UserListRepositoryType {
         }.resume()
     }
 }
-
-

@@ -21,6 +21,11 @@
 		D854542C29D1EB0700FF2FBD /* GitHubUserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854542B29D1EB0700FF2FBD /* GitHubUserUITestsLaunchTests.swift */; };
 		D854543A29D1EBBD00FF2FBD /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854543829D1EBBD00FF2FBD /* UserListViewController.swift */; };
 		D854543B29D1EBBD00FF2FBD /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D854543929D1EBBD00FF2FBD /* UserListViewController.xib */; };
+		D8C768D829EC31960079819C /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C768D629EC31960079819C /* UserDetailViewController.swift */; };
+		D8C768D929EC31960079819C /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C768D729EC31960079819C /* UserDetailViewController.xib */; };
+		D8C768DB29EC32010079819C /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C768DA29EC32010079819C /* UserView.swift */; };
+		D8C768DD29EC32120079819C /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C768DC29EC32120079819C /* UserView.xib */; };
+		D8C768E029EC32710079819C /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C768DF29EC32710079819C /* BaseXibView.swift */; };
 		D8D8D50229DEFCE0006784BD /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8D50129DEFCE0006784BD /* UserDataModel.swift */; };
 		D8EFE67329D3229700072086 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EFE67129D3229700072086 /* UserTableViewCell.swift */; };
 		D8EFE67429D3229700072086 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8EFE67229D3229700072086 /* UserTableViewCell.xib */; };
@@ -63,6 +68,11 @@
 		D854542B29D1EB0700FF2FBD /* GitHubUserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUserUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D854543829D1EBBD00FF2FBD /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		D854543929D1EBBD00FF2FBD /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListViewController.xib; sourceTree = "<group>"; };
+		D8C768D629EC31960079819C /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		D8C768D729EC31960079819C /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
+		D8C768DA29EC32010079819C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		D8C768DC29EC32120079819C /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
+		D8C768DF29EC32710079819C /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
 		D8D8D50129DEFCE0006784BD /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		D8EFE67129D3229700072086 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		D8EFE67229D3229700072086 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
@@ -155,10 +165,15 @@
 			children = (
 				D84EB6E129D47A7E000C346B /* other */,
 				D84EB6E029D47A65000C346B /* Set */,
+				D8C768DE29EC32580079819C /* Component */,
 				D84EB6DD29D477D0000C346B /* Util */,
 				D84EB6E429D47C02000C346B /* Cell */,
 				D854543829D1EBBD00FF2FBD /* UserListViewController.swift */,
 				D854543929D1EBBD00FF2FBD /* UserListViewController.xib */,
+				D8C768D629EC31960079819C /* UserDetailViewController.swift */,
+				D8C768D729EC31960079819C /* UserDetailViewController.xib */,
+				D8C768DA29EC32010079819C /* UserView.swift */,
+				D8C768DC29EC32120079819C /* UserView.xib */,
 				D8EFE67529D3241300072086 /* UserListViewModel.swift */,
 				D84EB6E629D48473000C346B /* UserDetailViewModel.swift */,
 				D8D8D50129DEFCE0006784BD /* UserDataModel.swift */,
@@ -184,6 +199,14 @@
 				D854542B29D1EB0700FF2FBD /* GitHubUserUITestsLaunchTests.swift */,
 			);
 			path = GitHubUserUITests;
+			sourceTree = "<group>";
+		};
+		D8C768DE29EC32580079819C /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				D8C768DF29EC32710079819C /* BaseXibView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8EFE67429D3229700072086 /* UserTableViewCell.xib in Resources */,
+				D8C768D929EC31960079819C /* UserDetailViewController.xib in Resources */,
 				D854541529D1EB0700FF2FBD /* LaunchScreen.storyboard in Resources */,
+				D8C768DD29EC32120079819C /* UserView.xib in Resources */,
 				D854543B29D1EBBD00FF2FBD /* UserListViewController.xib in Resources */,
 				D854541229D1EB0700FF2FBD /* Assets.xcassets in Resources */,
 			);
@@ -343,13 +368,16 @@
 			files = (
 				D84EB6E729D48473000C346B /* UserDetailViewModel.swift in Sources */,
 				D8EFE67329D3229700072086 /* UserTableViewCell.swift in Sources */,
+				D8C768D829EC31960079819C /* UserDetailViewController.swift in Sources */,
 				7EAB617429E59C0400D6DAB2 /* GitHubRepository.swift in Sources */,
 				D8D8D50229DEFCE0006784BD /* UserDataModel.swift in Sources */,
+				D8C768E029EC32710079819C /* BaseXibView.swift in Sources */,
 				D84EB6E329D47BA0000C346B /* UITableView+.swift in Sources */,
 				D84EB6DF29D479D7000C346B /* UITableViewCell+.swift in Sources */,
 				D854543A29D1EBBD00FF2FBD /* UserListViewController.swift in Sources */,
 				D854540929D1EB0500FF2FBD /* AppDelegate.swift in Sources */,
 				D854540B29D1EB0500FF2FBD /* SceneDelegate.swift in Sources */,
+				D8C768DB29EC32010079819C /* UserView.swift in Sources */,
 				D84EB6DC29D335CC000C346B /* Observable.swift in Sources */,
 				D8EFE67629D3241300072086 /* UserListViewModel.swift in Sources */,
 			);

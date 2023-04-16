@@ -7,13 +7,9 @@
 
 import Foundation
 
-
 class GitHubRepository {
-    
-    static func getUserDataModel(num: Int)-> String{
-        let url = "https://api.github.com/users?since=0&per_page=\(num)"
+    static func getUserDataModel(num: Int) -> String {
+        let url = "https://api.github.com/users?since=\(num)&per_page=20"
         return url
     }
-    
-    
 }

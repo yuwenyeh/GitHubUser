@@ -8,7 +8,6 @@
 import UIKit
 
 class UserTableViewCell: UITableViewCell {
-
     override func awakeFromNib() {
         super.awakeFromNib()
     }
