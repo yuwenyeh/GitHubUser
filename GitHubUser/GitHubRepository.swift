@@ -12,4 +12,8 @@ class GitHubRepository {
         let url = "https://api.github.com/users?since=\(num)&per_page=20"
         return url
     }
+    static func getUserDetailDataModel(name: String) -> String {
+        let url = "https://api.github.com/users/\(name)"
+        return url
+    }
 }

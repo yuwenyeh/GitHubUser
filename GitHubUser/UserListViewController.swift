@@ -31,7 +31,6 @@ class UserListViewController: UIViewController {
     }
     private func updateView() {
         DispatchQueue.main.async {
-            print("viewModel.userList.value = \(self.viewModel.userList.value.count)")
             self.mTableView.reloadData()
         }
     }
@@ -49,4 +48,3 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
-

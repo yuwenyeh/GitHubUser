@@ -27,6 +27,8 @@
 		D8C768DD29EC32120079819C /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C768DC29EC32120079819C /* UserView.xib */; };
 		D8C768E029EC32710079819C /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C768DF29EC32710079819C /* BaseXibView.swift */; };
 		D8D8D50229DEFCE0006784BD /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D8D50129DEFCE0006784BD /* UserDataModel.swift */; };
+		D8E1DEE229ED7C3600F4CC9D /* UserListDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1DEE129ED7C3600F4CC9D /* UserListDetailViewModelTests.swift */; };
+		D8E1DEE429ED812E00F4CC9D /* UserDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E1DEE329ED812E00F4CC9D /* UserDetailDataModel.swift */; };
 		D8EFE67329D3229700072086 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EFE67129D3229700072086 /* UserTableViewCell.swift */; };
 		D8EFE67429D3229700072086 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8EFE67229D3229700072086 /* UserTableViewCell.xib */; };
 		D8EFE67629D3241300072086 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EFE67529D3241300072086 /* UserListViewModel.swift */; };
@@ -74,6 +76,8 @@
 		D8C768DC29EC32120079819C /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
 		D8C768DF29EC32710079819C /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
 		D8D8D50129DEFCE0006784BD /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		D8E1DEE129ED7C3600F4CC9D /* UserListDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDetailViewModelTests.swift; sourceTree = "<group>"; };
+		D8E1DEE329ED812E00F4CC9D /* UserDetailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailDataModel.swift; sourceTree = "<group>"; };
 		D8EFE67129D3229700072086 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		D8EFE67229D3229700072086 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		D8EFE67529D3241300072086 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				D8EFE67529D3241300072086 /* UserListViewModel.swift */,
 				D84EB6E629D48473000C346B /* UserDetailViewModel.swift */,
 				D8D8D50129DEFCE0006784BD /* UserDataModel.swift */,
+				D8E1DEE329ED812E00F4CC9D /* UserDetailDataModel.swift */,
 				7EAB617329E59C0400D6DAB2 /* GitHubRepository.swift */,
 				D854541629D1EB0700FF2FBD /* Info.plist */,
 				D84EB6DB29D335CC000C346B /* Observable.swift */,
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				D854541F29D1EB0700FF2FBD /* GitHubUserTests.swift */,
+				D8E1DEE129ED7C3600F4CC9D /* UserListDetailViewModelTests.swift */,
 			);
 			path = GitHubUserTests;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 				7EAB617429E59C0400D6DAB2 /* GitHubRepository.swift in Sources */,
 				D8D8D50229DEFCE0006784BD /* UserDataModel.swift in Sources */,
 				D8C768E029EC32710079819C /* BaseXibView.swift in Sources */,
+				D8E1DEE429ED812E00F4CC9D /* UserDetailDataModel.swift in Sources */,
 				D84EB6E329D47BA0000C346B /* UITableView+.swift in Sources */,
 				D84EB6DF29D479D7000C346B /* UITableViewCell+.swift in Sources */,
 				D854543A29D1EBBD00FF2FBD /* UserListViewController.swift in Sources */,
@@ -387,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E1DEE229ED7C3600F4CC9D /* UserListDetailViewModelTests.swift in Sources */,
 				D854542029D1EB0700FF2FBD /* GitHubUserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,10 +8,6 @@
 import UIKit
 
 class UserView: BaseXibView {
-
-  
-    
     @IBOutlet weak var loginName: UILabel!
-    
-    
+
 }

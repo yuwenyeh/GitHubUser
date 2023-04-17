@@ -7,3 +7,11 @@
 
 import Foundation
 
+protocol UserListDetailViewModelType {
+}
+
+final class UserDetailViewModel {
+
+    init(userDetailName: String) {
+    }
+}

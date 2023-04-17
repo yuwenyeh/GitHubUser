@@ -17,7 +17,7 @@ class BaseXibView: UIView {
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        xibSetup()
+            xibSetup()
     }
     func xibSetup() {
         let boundle = Bundle(for: self.classForCoder)
