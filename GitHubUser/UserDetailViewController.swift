@@ -14,7 +14,9 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var twitterName: UILabel!
     @IBOutlet weak var followingLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!
-    init() {
+    private var viewModel: UserDetailViewModel
+    init(name: String) {
+        viewModel = UserDetailViewModel(userDetailName: name)
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
