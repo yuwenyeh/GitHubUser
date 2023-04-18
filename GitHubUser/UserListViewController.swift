@@ -47,4 +47,9 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = viewModel.userList.value[indexPath.row].name
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
+    
 }

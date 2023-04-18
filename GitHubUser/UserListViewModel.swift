@@ -24,7 +24,6 @@ final class UserListViewModel: UserListViewModelType {
     func getUserList() {
         finishWorking += 20
         let urlStr = GitHubRepository.getUserDataModel(num: finishWorking)
-       // let urlStr = "https://api.github.com/users?since=0&per_page=100"
         repository.getUserList(urlString: urlStr) { result in
             switch result {
             case .success(let value):

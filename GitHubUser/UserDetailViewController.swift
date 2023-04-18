@@ -15,8 +15,8 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var followingLabel: UILabel!
     @IBOutlet weak var followersLabel: UILabel!
     private var viewModel: UserDetailViewModel
-    init(name: String) {
-        viewModel = UserDetailViewModel(userDetailName: name)
+    init(data: UserDataModel) {
+        viewModel = UserDetailViewModel(userDetail: data)
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
@@ -24,5 +24,16 @@ class UserDetailViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.getUserDetail()
+        initView(dataModel:viewModel.userDetail.value)
     }
+    
+    func initView(dataModel :UserDetailDataModel){
+        userName.text = dataModel.name
+        loginLabel.text = dataModel.login
+        twitterName.text = dataModel.twitterName
+        followingLabel.text = dataModel.following?.description
+        followersLabel.text = dataModel.followers?.description
+    }
+    
 }

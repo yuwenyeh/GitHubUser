@@ -7,22 +7,56 @@
 
 import Foundation
 
-protocol UserListDetailViewModelType {
+protocol UserDetailViewModelType {
     var userDetail: Observable <UserDetailDataModel>{get}
-    func getUserDetail(name: String)
-    
+    var error: Observable<String?>{get}
+    func getUserDetail()
 }
 
-final class UserDetailViewModel: UserListDetailViewModelType {
-    func getUserDetail(name: String) {
-        <#code#>
+final class UserDetailViewModel: UserDetailViewModelType {
+    var error: Observable<String?> = Observable(.none)
+    var userDetail: Observable<UserDetailDataModel> = Observable(UserDetailDataModel())
+    let respository = UserDetailRepository()
+    var userDetailModel: UserDataModel
+    init(userDetail: UserDataModel) {
+        userDetailModel = userDetail
     }
     
-    var userDetail: Observable<UserDetailDataModel> = Observable(UserDetailDataModel())
-    
-    
-    init(userDetailName: String) {
-        
+    func getUserDetail() {
+        let url = GitHubRepository.getUserDetailDataModel(name: userDetailModel.name )
+        respository.getUserDetail(userStr: url){ result in
+            switch result {
+            case .success(let value):
+                self.userDetail.value = value
+            case .failure(let error):
+                self.error.value = error.localizedDescription
+            }
+        }
+    }
+}
+protocol UserDetailRepositoryType {
+    func getUserDetail( userStr:String, completion: @escaping(Result<UserDetailDataModel, Error>) -> Void)
+}
+
+struct UserDetailRepository: UserDetailRepositoryType {
+    func getUserDetail(userStr: String, completion: @escaping (Result<UserDetailDataModel, Error>) -> Void) {
+        guard let url = URL(string: userStr) else {return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error {
+                completion(.failure(error))
+                return
+            }
+            guard let response = response as? HTTPURLResponse,
+            (200...299).contains(response.statusCode) else {return}
+             guard let data else {return}
+            do {
+            let decoder = JSONDecoder()
+                let jsonData = try decoder.decode(UserDetailDataModel.self, from: data)
+                completion(.success(jsonData))
+        }catch let error {
+            completion(.failure(error))
+        }
+        }.resume()
     }
     
     
