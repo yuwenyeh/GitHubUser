@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class UserListViewController: UIViewController {
+class UserListViewController: ShareViewController {
     @IBOutlet weak var mTableView: UITableView!
     let viewModel: UserListViewModelType
     init(_ viewModel: UserListViewModelType) {
@@ -49,7 +49,8 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        let vc = UserDetailViewController(data: viewModel.userList.value[indexPath.row])
+            open(vc, animated: true)
     }
     
 }
