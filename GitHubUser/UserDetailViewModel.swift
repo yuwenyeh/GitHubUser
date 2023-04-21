@@ -8,23 +8,22 @@
 import Foundation
 
 protocol UserDetailViewModelType {
-    var userDetail: Observable <UserDetailDataModel>{get}
-    var error: Observable<String?>{get}
+    var userDetail: Observable < UserDetailDataModel > { get }
+    var error: Observable< String? > { get }
     func getUserDetail()
 }
 
 final class UserDetailViewModel: UserDetailViewModelType {
-    var error: Observable<String?> = Observable(.none)
+    var error: Observable< String? > = Observable(.none)
     var userDetail: Observable<UserDetailDataModel> = Observable(UserDetailDataModel())
     let respository = UserDetailRepository()
     var userDetailModel: UserDataModel
     init(userDetail: UserDataModel) {
         userDetailModel = userDetail
     }
-    
     func getUserDetail() {
-        let url = GitHubRepository.getUserDetailDataModel(name: userDetailModel.name )
-        respository.getUserDetail(userStr: url){ result in
+        let url = GitHubRepository.getUserDetailDataModel(name: userDetailModel.name)
+        respository.getUserDetail(userStr: url) { result in
             switch result {
             case .success(let value):
                 self.userDetail.value = value
@@ -34,9 +33,10 @@ final class UserDetailViewModel: UserDetailViewModelType {
         }
     }
 }
+
 protocol UserDetailRepositoryType {
-    func getUserDetail( userStr:String, completion: @escaping(Result<UserDetailDataModel, Error>) -> Void)
-}
+    func getUserDetail( userStr : String, completion: @escaping(Result < UserDetailDataModel, Error>) -> Void)
+ }
 
 struct UserDetailRepository: UserDetailRepositoryType {
     func getUserDetail(userStr: String, completion: @escaping (Result<UserDetailDataModel, Error>) -> Void) {
@@ -53,11 +53,9 @@ struct UserDetailRepository: UserDetailRepositoryType {
             let decoder = JSONDecoder()
                 let jsonData = try decoder.decode(UserDetailDataModel.self, from: data)
                 completion(.success(jsonData))
-        }catch let error {
+        } catch let error {
             completion(.failure(error))
         }
         }.resume()
     }
-    
-    
 }

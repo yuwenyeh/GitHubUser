@@ -9,4 +9,5 @@ import XCTest
 @testable import GitHubUser
 
 final class UserListDetailViewModelTests: XCTestCase {
+    
 }

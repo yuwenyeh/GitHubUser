@@ -49,7 +49,8 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        let viewModel = UserDetailViewModel( userDetail: viewModel.userList.value[indexPath.row] )
+        let vc = UserDetailViewController( viewModel: viewModel)
+        if let navigationController = navigationController{ navigationController.pushViewController(vc, animated: true)}
     }
-    
 }

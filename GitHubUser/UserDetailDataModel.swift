@@ -13,7 +13,6 @@ struct UserDetailDataModel: Decodable {
     var name: String?
     var twitterName: String?
     var followers: Int?
-
     var following: Int?
     enum CodingKeys: String, CodingKey {
         case login = "login"
@@ -21,7 +20,7 @@ struct UserDetailDataModel: Decodable {
         case htmlUrl = "html_url"
         case name = "name"
         case twitterName = "twitter_username"
-        case followers = "followers_url"
-        case following = "following_url"
+        case followers = "followers"
+        case following = "following"
     }
 }
