@@ -12,7 +12,7 @@ final class UserListViewModelTests: XCTestCase {
 
     func test_getUserList_successGetOneUserData() {
         // given準備好的測試材料
-        let value = [UserDataModel(name: "MockName", image: "MockImage", admin: true)]
+        let value = [UserDataModel.stub()]
         let expectation = XCTestExpectation(description: "should get data successfully")
         let repo = MockUserListRepository(value: value, error: nil, successExpectation: expectation)
         let sut = UserListViewModel(repository: repo)
@@ -24,6 +24,7 @@ final class UserListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.userList.value.first?.name, "MockName")
         XCTAssertEqual(sut.userList.value.first?.image, "MockImage")
         XCTAssertEqual(sut.userList.value.first?.admin, true)
+        //檢查預期有無滿足，在0.5秒內滿足否則報錯
         wait(for: [expectation], timeout: 0.5)
     }
 }

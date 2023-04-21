@@ -14,18 +14,18 @@ class ShareViewController: UIViewController {
 
     }
 
-    func open(_ aVC: UIViewController, animated aAnimated: Bool, completion aCompletion:(()-> Void)? = nil) {
-        DispatchQueue.main.async {
-            aVC.hidesBottomBarWhenPushed = true
-            if #available(iOS 13, *) {
-                aVC.modalPresentationStyle = .fullScreen
-            }
-            if let _navigationController: UINavigationController = self.navigationController {
-                _navigationController.pushViewController(aVC, animated: aAnimated)
-                aCompletion?()
-            } else {
-                self.present(aVC, animated: aAnimated, completion: aCompletion)
-            }
-        }
-    }
+//    func open(_ aVC: UIViewController, animated aAnimated: Bool, completion aCompletion:(() -> Void)? = nil) {
+//        DispatchQueue.main.async {
+//            aVC.hidesBottomBarWhenPushed = true
+//            if #available(iOS 13, *) {
+//                aVC.modalPresentationStyle = .fullScreen
+//            }
+//            if let _navigationController: UINavigationController = self.navigationController {
+//                _navigationController.pushViewController(aVC, animated: aAnimated)
+//                aCompletion?()
+//            } else {
+//                self.present(aVC, animated: aAnimated, completion: aCompletion)
+//            }
+//        }
+//    }
 }

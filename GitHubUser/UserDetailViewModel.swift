@@ -16,10 +16,11 @@ protocol UserDetailViewModelType {
 final class UserDetailViewModel: UserDetailViewModelType {
     var error: Observable< String? > = Observable(.none)
     var userDetail: Observable<UserDetailDataModel> = Observable(UserDetailDataModel())
-    let respository = UserDetailRepository()
+    let respository: UserDetailRepositoryType
     var userDetailModel: UserDataModel
-    init(userDetail: UserDataModel) {
+    init(userDetail: UserDataModel, respository: UserDetailRepositoryType) {
         userDetailModel = userDetail
+        self.respository = respository
     }
     func getUserDetail() {
         let url = GitHubRepository.getUserDetailDataModel(name: userDetailModel.name)
@@ -35,7 +36,8 @@ final class UserDetailViewModel: UserDetailViewModelType {
 }
 
 protocol UserDetailRepositoryType {
-    func getUserDetail( userStr : String, completion: @escaping(Result < UserDetailDataModel, Error>) -> Void)
+    func getUserDetail( userStr : String,
+                        completion: @escaping(Result < UserDetailDataModel, Error>) -> Void)
  }
 
 struct UserDetailRepository: UserDetailRepositoryType {
