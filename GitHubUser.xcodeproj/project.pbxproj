@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EAB617429E59C0400D6DAB2 /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB617329E59C0400D6DAB2 /* GitHubRepository.swift */; };
+		7EB70F9B29EE9B890008DFEB /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB70F9A29EE9B890008DFEB /* ShareViewController.swift */; };
 		D84EB6DC29D335CC000C346B /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EB6DB29D335CC000C346B /* Observable.swift */; };
 		D84EB6DF29D479D7000C346B /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EB6DE29D479D7000C346B /* UITableViewCell+.swift */; };
 		D84EB6E329D47BA0000C346B /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84EB6E229D47BA0000C346B /* UITableView+.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		7EAB617329E59C0400D6DAB2 /* GitHubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
+		7EB70F9A29EE9B890008DFEB /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		D84EB6DB29D335CC000C346B /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		D84EB6DE29D479D7000C346B /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		D84EB6E229D47BA0000C346B /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C768DF29EC32710079819C /* BaseXibView.swift */,
+				7EB70F9A29EE9B890008DFEB /* ShareViewController.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				7EAB617429E59C0400D6DAB2 /* GitHubRepository.swift in Sources */,
 				D8D8D50229DEFCE0006784BD /* UserDataModel.swift in Sources */,
 				D8C768E029EC32710079819C /* BaseXibView.swift in Sources */,
+				7EB70F9B29EE9B890008DFEB /* ShareViewController.swift in Sources */,
 				D8E1DEE429ED812E00F4CC9D /* UserDetailDataModel.swift in Sources */,
 				D84EB6E329D47BA0000C346B /* UITableView+.swift in Sources */,
 				D84EB6DF29D479D7000C346B /* UITableViewCell+.swift in Sources */,
